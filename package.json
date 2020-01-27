@@ -1,12 +1,16 @@
 {
-  "name": "immutable-forms",
+  "name": "form-tree",
   "version": "1.0.0",
   "description": "React forms built with Focal",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "npm run clear && tsc",
+		"clear": "rimraf ./build",
+		"lint-ts": "tsc --noEmit",
+		"lint": "npm run lint-ts"
   },
   "keywords": [
     "forms",
@@ -34,19 +38,25 @@
     "@testing-library/jest-dom": "5.0.2",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "8.0.4",
+    "@types/events": "3.0.0",
     "@types/hapi__joi": "16.0.8",
     "@types/jest": "24.9.1",
     "@types/react": "16.9.19",
     "babel-loader": "^8.0.6",
     "eslint": "6.8.0",
-    "eslint-config-prettier": "6.9.0",
     "jest": "25.1.0",
+    "rimraf": "3.0.0",
     "ts-jest": "25.0.0",
     "ts-loader": "6.2.1",
     "typescript": "3.7.5",
     "utility-types": "3.10.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-dom": "16.8.0",
+    "@grammarly/focal": "^0.8.1",
+    "rxjs": "^6.5.0",
+    "rxjs-compat": "^6.5.0",
+    "rxjs-hooks": "^0.5.0"
   }
 }
